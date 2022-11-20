@@ -1,6 +1,6 @@
-// Problem: https://leetcode.com/problems/coin-change/
-
 /*
+https://leetcode.com/problems/coin-change/
+
 Runtime: 162 ms, faster than 67.07% of JavaScript online submissions for Coin Change.
 Memory Usage: 48.1 MB, less than 42.37% of JavaScript online submissions for Coin Change.
 
