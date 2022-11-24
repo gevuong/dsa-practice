@@ -7,7 +7,8 @@ Memory Usage: 44.3 MB, less than 79.56% of JavaScript online submissions for Sub
 TC O(nlogn + n x 2^n) -> O(n x (logn + 2^n)) -> O(n x 2^n)
 SC O(logn + n) to O(n + n) -> O(n) worst case.
 Depending on language used to sort, space ranges from O(logn) to O(n).
-We are not considering space required to store output, if so it would be we are making a copy of a subset of max length n.
+We are not considering space required to store output, if so it would be an upper bound of 2^n.
+Also, space to make copy of subset is O(n) since a subse can be of max length n.
 
 To prevent duplicates, we only want to add a duplicate number to ONLY the previously added subsets.
 For example:
