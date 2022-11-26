@@ -5,7 +5,8 @@ Runtime: 108 ms, faster than 66.76% of JavaScript online submissions for Path Su
 Memory Usage: 46.3 MB, less than 12.12% of JavaScript online submissions for Path Sum.
 
 TC O(n), where n is number of nodes.
-SC O(h), where h is height of tree.
+SC O(n/2) -> O(n). There can be at most n/2 leaf nodes in the queue since we're
+doing a level-order traversal. O(n/2) reduces to O(n).
 */
 
 var hasPathSum = function(root, targetSum) {
