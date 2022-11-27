@@ -40,10 +40,10 @@ var preorderTraversal = function(root) {
 }
 
 /*
-Runtime: 65 ms, faster than 89.41% of JavaScript online submissions for Binary Tree Preorder Traversal.
-Memory Usage: 42.1 MB, less than 53.30% of JavaScript online submissions for Binary Tree Preorder Traversal.
+Runtime: 61 ms, faster than 94.67% of JavaScript online submissions for Binary Tree Preorder Traversal.
+Memory Usage: 42.1 MB, less than 66.77% of JavaScript online submissions for Binary Tree Preorder Traversal.
 
-Not as clean as above solution, 
+Valid solution, but obviously not as clean as above solution, 
 but you can check if left and right children first exists, before calling dfs with them.
 */
 
