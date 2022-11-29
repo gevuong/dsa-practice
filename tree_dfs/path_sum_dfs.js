@@ -3,6 +3,9 @@ https://leetcode.com/problems/path-sum/
 
 Runtime: 117 ms, faster than 48.76% of JavaScript online submissions for Path Sum.
 Memory Usage: 45.7 MB, less than 55.33% of JavaScript online submissions for Path Sum.
+
+TC O(n) | SC O(n), where n is number of nodes in tree.
+Worst case space is when tree is a linked list, where every node has one child.
 */
 
 var hasPathSum = function(root, targetSum) {    
@@ -26,6 +29,7 @@ var hasPathSum = function(root, targetSum) {
     // call dfs
     return dfs(root, targetSum);
 };
+
 
 /*
 Runtime: 75 ms, faster than 92.86% of JavaScript online submissions for Path Sum.
