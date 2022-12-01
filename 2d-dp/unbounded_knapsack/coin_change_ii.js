@@ -1,17 +1,20 @@
 /* 
 Problem: https://leetcode.com/problems/coin-change-ii/
+
 Super helpful resources:
 2D DP bottom up concept: https://www.youtube.com/watch?v=DJ4a7cmjZY0
 1D DP bottom up approach: https://www.youtube.com/watch?v=jaNZ83Q3QGc
-*/
 
-/* 
 Runtime: 179 ms, faster than 41.12% of JavaScript online submissions for Coin Change II.
 Memory Usage: 69.6 MB, less than 37.01% of JavaScript online submissions for Coin Change II.
+
 TC O(n x m)
 SC O(n x m)
 
-Note: This can be solved with O(n) space, a 1D dp array.
+Note: This can be solved with O(n) space, a 1D dp array. We can eliminate one
+    of the states because we can have as many of a particular coin as we need.
+    If on the other hand, we were limited to 'k' uses of a coin, we would need
+    to track the number of limited uses.
 */
 var change = function(amount, coins) {
     // define 2d array to store solution at each state.

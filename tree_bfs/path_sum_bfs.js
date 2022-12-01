@@ -9,7 +9,7 @@ SC O(n/2) -> O(n). There can be at most n/2 leaf nodes in the queue since we're
 doing a level-order traversal. O(n/2) reduces to O(n).
 
 Hints:
-1. Queue can store a subarray of the node and the current sum.
+1. Queue can store a subarray of the node and the current sum, [node, currSum].
 
 2. If a node is a leaf node and the current sum equals target sum, then there
     is a valid path that sums to target.

@@ -8,7 +8,10 @@ TC O(n x m)
 SC O(n x m), store 2D dp array.
 where m is length of coins, and n is amount.
 
-Note: This can be solved with O(n) space, a 1D dp array.
+Note: This can be solved with O(n) space, a 1D dp array. We can eliminate one
+    of the states because we can have as many of a particular coin as we need.
+    If on the other hand, we were limited to 'k' uses of a coin, we would need
+    to track the number of limited uses.
 */
 
 var coinChange = function(coins, amount) {
