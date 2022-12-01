@@ -1,13 +1,56 @@
 /*
 https://leetcode.com/problems/validate-binary-search-tree/
 
+Method 1: Recursive traversal with Valid Range
+
+Runtime: 107 ms, faster than 67.08% of JavaScript online submissions for Validate Binary Search Tree.
+Memory Usage: 46.3 MB, less than 60.20% of JavaScript online submissions for Validate Binary Search Tree.
+
+Hints:
+1. An empty tree is still a valid BST.
+
+2. Check if current node value is within lower and upper limits.
+
+3. If at any point the left or right subtree encounters an invalid BST,
+    that means the entire tree is invalid. In other words, both left and right
+    subtrees must be valid BSTs.
+    The upper limit must be updated when traversing the left subtree.
+    Similarly, the lower limit must be updated when traversing the right subtree.
+*/
+
+var isValidBST = function(root) {
+    // define dfs method with node, lower and upper limits
+    const dfs = (node, low, high) => {
+        // define base case, if node equals null, return true.
+        // an empty tree is also a valid BST.
+        if (node === null) return true;
+        
+        // make sure current node value are within the low and
+        // high bounds, exclusive. If not, tree is an invalid BST.
+        if (node.val <= low || node.val >= high) return false;
+    
+        // we want to make sure both the left and right subtrees
+        // are valid. 
+        // Update the upper limit when traversing the left subtree,
+        // and the lower limit when traversing the 
+        // right subtree to satisfy BST property.
+        return dfs(node.left, low, node.val) && dfs(node.right, node.val, high);
+    }
+    
+    // call dfs
+    return dfs(root, -Infinity, Infinity);
+};
+
+
+
+/*
 Runtime: 100 ms, faster than 74.10% of JavaScript online submissions for Validate Binary Search Tree.
 Memory Usage: 46.4 MB, less than 51.20% of JavaScript online submissions for Validate Binary Search Tree.
 
 TC O(n) | SC O(n), where n is total number of nodes in tree.
 Worst case is if tree is a linked list, where each node has a one child.
 
-Method 1: Recursive Inorder Traversal
+Method 2: Recursive Inorder Traversal
 
 Hints:
 1. Write code to traverse tree inorder.
@@ -17,10 +60,9 @@ Hints:
     The previous node (ie. bottom-leftmost child) value needs to be LESS THAN the 
     current (ie. its parent) node value.
 
-2. As we traverse the left subtree via dfs call, if at any point the dfs call
+2. As we traverse the left subtree (via dfs call), if at any point the dfs call
     returns false, we know the tree is an invalid BST, and we can return false.
 
-3. 
 */
 
 var isValidBST = function(root) {
@@ -57,32 +99,3 @@ var isValidBST = function(root) {
 };
 
 
-/*
-Method 2: Recursive traversal with Valid Range
-
-Runtime: 107 ms, faster than 67.08% of JavaScript online submissions for Validate Binary Search Tree.
-Memory Usage: 46.3 MB, less than 60.20% of JavaScript online submissions for Validate Binary Search Tree.
-*/
-
-var isValidBST = function(root) {
-    // define dfs method with node, lower and upper limits
-    const dfs = (node, low, high) => {
-        // define base case, if node equals null, return true.
-        // an empty tree is also a valid BST.
-        if (node === null) return true;
-        
-        // make sure current node value are within the low and
-        // high bounds, exclusive. If not, tree is an invalid BST.
-        if (node.val <= low || node.val >= high) return false;
-    
-        // we want to make sure both the left and right subtrees
-        // are valid. 
-        // Update the upper limit when traversing the left subtree,
-        // and the lower limit when traversing the 
-        // right subtree to satisfy BST property.
-        return dfs(node.left, low, node.val) && dfs(node.right, node.val, high);
-    }
-    
-    // call dfs
-    return dfs(root, -Infinity, Infinity);
-};
