@@ -10,7 +10,7 @@ to add or not add a bracket.
 As for SC, I would say O(2n) -> O(n), since the stack would store at most a string of length 2n.
 */
 
-var generateParenthesis = function(n) {
+var generateParentheses = function(n) {
     // define output array
     const res = [];
     
