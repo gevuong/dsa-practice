@@ -20,14 +20,6 @@ Note from LC: BFS is not a good algorithm to use for this problem.
     we would also need to maintain 20 different path arrays since there is 
     no backtracking here. That is too much of a space overhead.
 
-    The good thing about depth first search is that it uses recursion for 
-    processing one branch at a time and once we are done processing the nodes 
-    of a particular branch, we pop them from the pathNodes list thus saving on
-    space. At a time, this list would only contain all the nodes in a single 
-    branch of the tree and nothing more. Had the problem statement asked us the 
-    total number of paths that add up to a particular sum (root to leaf), then 
-    breadth first search would be an equally viable approach.
-
 Hints:
 1. There is an if-else statement. If the remaining sum equals 0, then we can
     push path to output array. Else recurse the left and right subtrees of 
