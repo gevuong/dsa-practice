@@ -2,6 +2,8 @@
 https://leetcode.com/problems/two-sum-less-than-k/
 
 Method: Binary Search (less efficient than two pointers)
+Runtime: 79 ms, faster than 76.49% of JavaScript online submissions for Two Sum Less Than K.
+Memory Usage: 42.8 MB, less than 16.67% of JavaScript online submissions for Two Sum Less Than K.
 
 TC O(nlogn) | SC O(logn) to O(n) depending on search algorithm.
 */

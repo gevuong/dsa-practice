@@ -4,7 +4,7 @@ https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
 Runtime: 94 ms, faster than 65.28% of JavaScript online submissions for Two Sum II - Input Array Is Sorted.
 Memory Usage: 43 MB, less than 61.29% of JavaScript online submissions for Two Sum II - Input Array Is Sorted.
 
-Method: Two Pointers
+Method: Two Pointers (most efficient)
 TC O(n) | SC O(1)
 */
 
