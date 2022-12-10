@@ -45,11 +45,12 @@ var pathSum = function(root, targetSum) {
             // then we found a valid path sum, save path to output.
             if (node.left === null && node.right === null && remainingSum === 0) {
                 paths.push([...path]);
-            } else {
-                // otherwise, call dfs with left and right child and remaining sum
-                dfs(node.left, remainingSum, path);
-                dfs(node.right, remainingSum, path);
             }
+
+            // call dfs with left and right child and remaining sum
+            dfs(node.left, remainingSum, path);
+            dfs(node.right, remainingSum, path);
+            
             // After traversing all the current node's left and right
             // subtrees, we pop from path to move upward towards root of tree.
             // Remove current node from the path to backtrack,
