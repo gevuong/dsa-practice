@@ -4,8 +4,7 @@ https://leetcode.com/problems/binary-tree-paths/
 Runtime: 72 ms, faster than 87.37% of JavaScript online submissions for Binary Tree Paths.
 Memory Usage: 43.6 MB, less than 70.56% of JavaScript online submissions for Binary Tree Paths.
 
-
-Method 1: Recursive DFS + Path Array
+Method 1: Recursive DFS + Backtracking + Path Array
 
 TC O(n) or O(n^2)
 Hm, TC could be O(n^2), since joining a path takes O(n) time and there are 

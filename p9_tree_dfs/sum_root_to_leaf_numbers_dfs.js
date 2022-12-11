@@ -37,7 +37,7 @@ var sumNumbers = function(root) {
 };
 
 /*
-Method 2: DFS Recursive + Path Array (Less optimal)
+Method 2: DFS Recursive + Backtracking + Path Array (Less optimal)
 
 Runtime: 72 ms, faster than 79.30% of JavaScript online submissions for Sum Root to Leaf Numbers.
 Memory Usage: 42.5 MB, less than 45.15% of JavaScript online submissions for Sum Root to Leaf Numbers.
