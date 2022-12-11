@@ -4,6 +4,8 @@ https://leetcode.com/problems/path-sum-ii/
 Runtime: 75 ms, faster than 96.05% of JavaScript online submissions for Path Sum II.
 Memory Usage: 44.8 MB, less than 90.07% of JavaScript online submissions for Path Sum II.
 
+Method: Recursive DFS + Backtracking + Path Array
+
 TC O(n^2), because worst case is if tree is balanced, then at most we can have
 n/2 leaf nodes. And for each root-to-leaf path we may need to make a copy
 of each path to be added to the output, which takes O(n) time.
@@ -53,11 +55,12 @@ var pathSum = function(root, targetSum) {
             // then we found a valid path sum, save path to output.
             if (node.left === null && node.right === null && remainingSum === 0) {
                 paths.push([...path]);
-            } else {
-                // otherwise, call dfs with left and right child and remaining sum
-                dfs(node.left, remainingSum, path);
-                dfs(node.right, remainingSum, path);
             }
+
+            // call dfs with left and right child and remaining sum
+            dfs(node.left, remainingSum, path);
+            dfs(node.right, remainingSum, path);
+            
             // After traversing all the current node's left and right
             // subtrees, we pop from path to move upward towards root of tree.
             // Remove current node from the path to backtrack,
