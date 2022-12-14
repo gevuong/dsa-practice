@@ -4,7 +4,10 @@ https://leetcode.com/problems/minimum-falling-path-sum/
 Method: Top Down DP w/ Memoization
 
 # Intuition
-<!-- Describe your first thoughts on how to solve this problem. -->
+This is a DP problem because
+1. It asks for the MINIMUM of something (ie. falling path sum).
+2. A greedy approach will not work because choosing the min value out of the 
+    3 possible next steps (at each cell) will not always give us the path to min sum.
 
 # Approach
 1. Create a 2d memo array of a size equivalent to input matrix.
