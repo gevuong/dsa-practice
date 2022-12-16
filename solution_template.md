@@ -3,7 +3,7 @@
 ```md
 
 /*
-# Link to Problem
+# Problem
 
 # Method
 

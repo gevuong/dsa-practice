@@ -1,7 +1,9 @@
 /*
+# Problem
 https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/description/
 
-# Method: Sliding Window + Hashmap (Count)
+# Method
+Sliding Window + Hashmap (Count)
 
 # Intuition
 <!-- Describe your first thoughts on how to solve this problem. -->
