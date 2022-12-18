@@ -15,10 +15,17 @@ the first element in the queue.
 
 # Complexity
 - Time complexity:
-<!-- Add your time complexity here, e.g. $$O(n)$$ -->
+push - O(1)
+pop - O(1) amortized. This only occurs when there are no more values in stack 2,
+we have to loop all recently pushed values in stack 1, pop and push them to stack 2.
+The number of times pop operation can be called is limited by the number of push
+operations before it. Although a single pop operation can be expensive, it is 
+expensive only once per n times (queue size), when stack 2 is empty.
+peek - O(1)
+empty - O(1)
 
 - Space complexity:
-O(n)
+O(n). Worst case is n methods are pushes to queue.
 */
 
 class MyQueue {
