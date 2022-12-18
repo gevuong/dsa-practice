@@ -2,8 +2,8 @@
 # Problem
 https://leetcode.com/problems/evaluate-reverse-polish-notation/description/
 
-# Method
-Stack
+# Method 1
+Stack + Hashmap
 
 # Intuition
 <!-- Describe your first thoughts on how to solve this problem. -->
@@ -21,6 +21,41 @@ O(n). Every element is visited once.
 O(n/2) => O(n). Worst case is half the tokens are numbers, which are stored in stack.
 */
 
+var evalRPN = function(tokens) {
+    // define stack, tokens length, and set with 4 valid operators
+    const tokensLen = tokens.length,
+        stack = [],
+        operators = {
+            '+': (a, b) => a + b,
+            '-': (a, b) => a - b,
+            '*': (a, b) => a * b,
+            '/': (a, b) => Math.trunc(a / b),
+        }
+
+    // loops tokens
+    for (let i = 0; i < tokensLen; i++) {
+        // if token is not in set, then it is a digit,
+        // so push to stack
+        if (!(tokens[i] in operators)) stack.push(Number(tokens[i]));
+
+        // else pop twice from stack, and perform operation.
+        // Note: round towards 0 if operator is '/'.
+        else {
+            const [popOne, popTwo] = [stack.pop(), stack.pop()];
+            const performOperation = operators[tokens[i]];
+            const result = performOperation(popTwo, popOne);
+            
+            // push result to stack
+            stack.push(result);
+        }
+    }
+
+    // return remaining value in stack
+    return stack[0];
+};
+
+// Method 2
+// Stack + HashSet
 var evalRPN = function(tokens) {
     // define stack, tokens length, and set with 4 valid operators
     const tokensLen = tokens.length,
