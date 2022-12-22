@@ -19,7 +19,9 @@ is already unlocked so we start at room 0, and add room 0 to visited set.
 
 # Complexity
 - Time complexity:
-O(V), where V is number of vertices (ie. n - 1).
+O(V+E), where V is number of vertices and E is number of keys. 
+Even when you have already visited a neighbor (ie. room), you need to travel 
+on the connecting edge to find out that you have already visited the neighbor.
 
 - Space complexity:
 O(V). Worst case is a single room stores all room keys. This means that queue

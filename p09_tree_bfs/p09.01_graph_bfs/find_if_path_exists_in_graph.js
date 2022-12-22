@@ -3,7 +3,7 @@
 https://leetcode.com/problems/find-if-path-exists-in-graph/description/
 
 # Method
-BFS + Hashmap + Hashset + Queue
+BFS (via Queue) + Adjacency List (via Hashmap) + Visited (via Hashset)
 
 # Intuition
 <!-- Describe your first thoughts on how to solve this problem. -->
