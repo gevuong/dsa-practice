@@ -4,6 +4,9 @@ https://leetcode.com/problems/binary-search/
 Runtime: 91 ms, faster than 72.28% of JavaScript online submissions for Binary Search.
 Memory Usage: 45.3 MB, less than 20.75% of JavaScript online submissions for Binary Search.
 
+Method
+Two Pointers (Opposite Direction)
+
 TC O(logn) | SC O(1)
 */
 

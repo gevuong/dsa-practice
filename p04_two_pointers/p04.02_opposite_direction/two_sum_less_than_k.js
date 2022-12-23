@@ -4,7 +4,7 @@ https://leetcode.com/problems/two-sum-less-than-k/
 Runtime: 77 ms, faster than 77.98% of JavaScript online submissions for Two Sum Less Than K.
 Memory Usage: 42.2 MB, less than 65.18% of JavaScript online submissions for Two Sum Less Than K.
 
-Method: Two Pointers
+Method: Two Pointers (Opposite Direction)
 
 TC O(nlogn) | SC O(logn) to O(n) depending on sort algorithm.
 */
