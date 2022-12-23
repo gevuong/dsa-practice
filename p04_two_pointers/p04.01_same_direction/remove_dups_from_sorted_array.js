@@ -1,6 +1,9 @@
 /*
 https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
 
+Method
+Two Pointers (Same Direction)
+
 Intuition:
 1. Use a two pointer approach, and traverse input array linearly.
     If values at both pointers are equal, increment fast pointer.
