@@ -15,7 +15,7 @@ Method: Path Sum, Non-optimal solution
 var pathSum = function(root, targetSum) {
     // define count, dfs with node current sum as params
     let count = 0;
-    const dfs = (node, currSum, path) => {
+    const dfs = (node, path) => {
         // define base case, 
         // if node is null, we have 0 path count.
         if (node === null) return 0;
@@ -38,8 +38,8 @@ var pathSum = function(root, targetSum) {
         }
         
         // traverse left and right subtrees
-        dfs(node.left, currSum, path);
-        dfs(node.right, currSum, path);
+        dfs(node.left, path);
+        dfs(node.right, path);
         
         // remove current node from path to backtrack.
         // the current node needs to be removed to go up the
@@ -47,7 +47,7 @@ var pathSum = function(root, targetSum) {
         path.pop();        
     };
     
-    dfs(root, 0, []);
+    dfs(root, []);
     return count;
 };
 

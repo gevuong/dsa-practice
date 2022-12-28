@@ -1,7 +1,3 @@
-# Solution Template
-
-```md
-
 /*
 # Problem
 
@@ -22,5 +18,3 @@
 - Space complexity:
 <!-- Add your space complexity here, e.g. $$O(n)$$ -->
 */
-
-```
