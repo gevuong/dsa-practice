@@ -3,7 +3,7 @@
 https://leetcode.com/problems/walls-and-gates/description/
 
 # Method (Not as Intuitive imo - has a few tricks)
-BFS w/ Multiple Sources (Queue) + Level Order Traversal
+BFS (w/ Multiple Sources) + Level Order Traversal
 
 # Intuition
 Push all gates (or sources) to queue. After pushing all sources (or gates) to

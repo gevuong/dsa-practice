@@ -3,7 +3,7 @@
 https://leetcode.com/problems/walls-and-gates/description/
 
 # Method (More intuitive imo, but less time efficient)
-BFS (For Each Gate) + Level Order Traversal
+BFS (For Each Gate) + Level Order Traversal + HashSet
 
 # Intuition
 1. Implement BFS as soon as we visit a gate. 
