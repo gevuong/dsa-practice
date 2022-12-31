@@ -1,16 +1,31 @@
 /*
-Problem: https://leetcode.com/problems/subsets/
-Runtime: 64 ms, faster than 96.53% of JavaScript online submissions for Subsets.
-Memory Usage: 44 MB, less than 41.82% of JavaScript online submissions for Subsets.
+# Problem
+https://leetcode.com/problems/subsets/description/
 
-For each element in nums, the number of subsets double, which results in 2^n time and space, where n is length of nums.
-If nums = [1], then number of subsets is 2. If nums = [1,2], number of subsets is 4, etc.
+# Method
+BFS (via Subsets)
 
-Since we create a new subset for each existing subset, the time and space it takes is O(n).
+# Intuition
+<!-- Describe your first thoughts on how to solve this problem. -->
 
-TC O(n x 2^n), there are 2^n subsets, and creating a copy of a subset can take at most O(n) time
-because a subset can contain at most n elements.
-SC O(n x 2^n), there are 2^n subsets, and a subset can contain at most n elements.
+# Approach
+1. Start with an empty set in subsets array.
+2. Loop numbers.
+3. Within loop, loop up to current length of subset.
+4. Within subsets loop, create a copy of each subset, push current number to
+    the copied subset, and push copied subset to subsets array.
+5. Return subsets.
+
+# Complexity
+- Time complexity:
+O(n x 2^n). 
+In each step, the number of subsets doubles as we add each element to all the
+existing subsets. Therefore we have 2^n subsets, where n is the number of
+elements in the input. Constructing a new subset from an existing subset takes 
+O(n) time.
+
+- Space complexity:
+O(n x 2^n). There are 2^n subsets, and each subset can take up to O(n) space.
 */
 
 var subsets = function(nums) {
@@ -22,11 +37,11 @@ var subsets = function(nums) {
         // loop subsets length
         const subsetsLen = subsets.length;
         for (let j = 0; j < subsetsLen; j++) {
-            // access each subset in subsetsCopy            
+            // make copy of subset          
             const sub = subsets[j].slice();
             // push num to subset
             sub.push(n);
-            // push new subset to subsets
+            // push copy to subsets
             subsets.push(sub);
         }
     }

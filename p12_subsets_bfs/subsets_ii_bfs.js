@@ -1,72 +1,68 @@
 /*
-https://leetcode.com/problems/subsets-ii/
+# Problem
+https://leetcode.com/problems/subsets-ii/description/
 
-Runtime: 107 ms, faster than 66.82% of JavaScript online submissions for Subsets II.
-Memory Usage: 44.3 MB, less than 79.56% of JavaScript online submissions for Subsets II.
+# Method
+BFS (via Subsets) + Sliding Window (Start Index)
 
-TC O(nlogn + n x 2^n) -> O(n x (logn + 2^n)) -> O(n x 2^n)
-SC O(logn + n) to O(n + n) -> O(n) worst case.
-Depending on language used to sort, space ranges from O(logn) to O(n).
-We are not considering space required to store output, if so it would be an upper bound of 2^n.
-Also, space to make copy of subset is O(n) since a subse can be of max length n.
+# Intuition
+1. To prevent duplicates, sort input array, and if current and previous numbers
+    are equal, we want to add current number ONLY to the previous set of subsets.
 
-To prevent duplicates, we only want to add a duplicate number to ONLY the previously added subsets.
-For example:
-nums = [1,2,2,2]
+# Approach
+1. Define subsets array with an empty subset, and a starting window index.
+2. Sort input array in ascending order.
+2. If current element equals previous element, we want to update the starting
+    subsets window to when the previous subsets length.
+4. Update to new subsets length.
+5. Loop subsets starting window and subsets length, make a copy of each subset,
+    push current number to copy, and push copy to subsets.
 
-Step 1:
-add 1 to subsets: 
-[[], [1]]
+# Complexity
+- Time complexity:
+O(n x 2^n + nlogn). 
+Worst case is if there are no duplicates and all elements are unique.
+That means there will be 2^n subsets, and it takes O(n) to create a copy of a
+subset.
+Also, sorting takes O(nlogn) time.
 
-Step 2:
-add first 2 to subsets:
-[[], [1], [2], [1,2]]
-
-Step 3:
-add second 2 to subsets regardless of duplicates:
-[[], [1], [2], [1,2], [2], [1,2], [2,2], [1,2,2]]
-
-There are duplicates in this subset.
-Therefore, we only add second 2 to previously added subset of [2] and [1,2].
-[[], [1], [2], [1,2], [2,2], [1,2,2]]
-
-Step 4:
-Add third 2 to previously added subset of [2,2] and [1,2,2].
-[[], [1], [2], [1,2], [2,2], [1,2,2], [2,2,2], [1,2,2,2]]
+- Space complexity:
+O(n x 2^n) + O(logn) or O(n).
+\Worst case is if all elements are unique. This means there will be
+2^n subsets, and each subset can take up to O(n) space.
+Also, sorting takes O(logn) to O(n) space, depending on language.
 */
+
 var subsetsWithDup = function(nums) {
-    // sort nums in ascending order.
-    nums.sort((a, b) => a - b);
-    
-    // define subsets array, start and end indices to insert 
+    // define nums length, subsets, start window
     const numsLen = nums.length,
-          subsets = [[]];
-    let start = 0,
-        end = 0;
-    
+        subsets = [[]];
+    let start = 0;
+
+    // sort nums, in place, ascending order
+    nums.sort((a, b) => a - b);
+
     // loop nums
     for (let i = 0; i < numsLen; i++) {
         // reset start index
         start = 0;
-        
-        // for each num, check if prev and current nums are equal.
-        // if so, update start index to when the end index last ended.
-        // This is because we want to add current num ONLY to the prev set of subsets.
-        // This will prevent duplicates.
-        if (i > 0 && nums[i-1] === nums[i]) start = end;
-        
-        // update end index to length of subsets,
-        // because we want to loop every subset.
-        end = subsets.length;
-    
-        // loop each subset from start to end indices.
-        for (let j = start; j < end; j++) {
-            // make copy of subset, push num to copy,
-            // push copy to subsets.
+
+        // if prev num equals current num, update start index
+        // to previous end index (or when index last ended).
+        // To prevent dups, we want to add current num ONLY to
+        // the prev set of subsets.
+        if (i > 0 && nums[i-1] === nums[i]) start = subsLen;
+
+        // calc and loop subsets length
+        subsLen = subsets.length;
+        for (let j = start; j < subsLen; j++) {
+            // copy subset, push num to copy, 
+            // and push copy to subset
             const copy = subsets[j].slice();
             copy.push(nums[i]);
             subsets.push(copy);
         }
     }
+
     return subsets;
 };

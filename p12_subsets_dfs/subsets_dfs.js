@@ -51,7 +51,3 @@ var subsets = function(nums) {
     dfs(0);
     return subsets;
 };
-
-/*
-
-*/
