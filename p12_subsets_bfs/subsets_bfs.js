@@ -6,7 +6,8 @@ https://leetcode.com/problems/subsets/description/
 BFS (via Subsets)
 
 # Intuition
-<!-- Describe your first thoughts on how to solve this problem. -->
+For each existing subset, we add a new element to it, and add the updated
+subset to the array of subsets.
 
 # Approach
 1. Start with an empty set in subsets array.

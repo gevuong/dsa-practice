@@ -1,4 +1,14 @@
-# General Backtracking Template from LC
+# Subset vs Permutation vs Combination
+
+- A subset (aka power set), is all possible combinations of
+all possible lengths, from 0 to n, and has a TC of O(2^n), because each element
+can be absent or present.
+- Permutation has TC of O(n!).
+- Combination has TC of N!/((N-k)k!).
+
+More info: https://leetcode.com/problems/subsets/solutions/464411/subsets/
+
+## General Backtracking Template from LC
 
 ```python
 def backtrack(candidate):
