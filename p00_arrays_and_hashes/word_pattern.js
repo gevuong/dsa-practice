@@ -3,7 +3,7 @@
 https://leetcode.com/problems/word-pattern/description/
 
 # Method
-HashMap + HashSet (to track visited/seen) - My Initial Solution
+Hashmap + Hashset (to track visited/seen) - My Initial Solution
 
 # Intuition
 Map each character in pattern to a word (or string) in s.
@@ -59,8 +59,8 @@ var wordPattern = function(pattern, s) {
 };
 
 /*
-Method 2
-Hashmap + HashSet (to compare set sizes)
+Method 2: Simplified
+Hashmap + Hashset (to compare set sizes)
 */
 
 var wordPattern = function(pattern, s) {
@@ -94,7 +94,7 @@ var wordPattern = function(pattern, s) {
 
 /*
 Method 3
-HashMap (to track indices of every char in pattern in word splitted array)
+Hashmap (to track indices of every char in pattern in word splitted array)
 */
 var wordPattern = function(pattern, s) {
     // define splitted s, pattern length, hashmap
