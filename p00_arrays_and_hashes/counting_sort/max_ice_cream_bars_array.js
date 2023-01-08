@@ -3,7 +3,7 @@
 https://leetcode.com/problems/maximum-ice-cream-bars/description/
 
 # Method
-Count (via Hashmap) + Greedy
+Counting Sort (via Array) + Greedy
 
 # Intuition
 <!-- Describe your first thoughts on how to solve this problem. -->
@@ -21,33 +21,32 @@ n values.
 */
 
 var maxIceCream = function(costs, coins) {
-    // define cost count, min and max cost
-    const costCount = {};
+    // define min and max count
     let minCost = Infinity,
         maxCost = -Infinity;
 
-    // populate cost count, min and max cost
     for (const c of costs) {
-        c in costCount ? costCount[c]++ : costCount[c] = 1;
         minCost = Math.min(minCost, c);
         maxCost = Math.max(maxCost, c);
     }
 
-    // define min ice cream
-    let minIceCream = 0;
-    // loop from min to max
-    for (let c = minCost; c <= maxCost; c++) {
-        // loop while current cost still exists in hashmap,
-        // and coins >= current cost.
-        while (costCount[c] > 0 && coins >= c) {
-            // subtract current cost from coin,
-            // decrement cost count, and increment max count
-            coins -= c;
-            costCount[c]--;
-            minIceCream++;
+    // define cost count array, min and max count
+    const costCount = Array(maxCost + 1).fill(0);
+    for (const c of costs) costCount[c]++;
+    
+    // loop costs, and populate cost count array
+    let maxIceCream = 0;
+    for (let cost = minCost; cost <= maxCost; cost++) {
+        // if cost is greater than coins, then no 
+        // coins can buy any ice cream.
+        if (cost > coins) break;
+
+        while (costCount[cost] > 0 && cost <= coins) {
+            coins -= cost;
+            costCount[cost]--;
+            maxIceCream++;
         }
     }
 
-    return minIceCream;
+    return maxIceCream;
 };
-

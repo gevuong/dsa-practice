@@ -3,7 +3,7 @@
 https://leetcode.com/problems/minimum-rounds-to-complete-all-tasks/description/
 
 # Method
-Count (via Hashmap) + Greedy + Math
+Counting Sort (via Hashmap) + Greedy + Math
 
 # Intuition
 - Initially thought this may be a DP problem, similar to Climbing Stairs.
@@ -35,7 +35,7 @@ var minimumRounds = function(tasks) {
     // define frequency count, tasks length, min count
     const levelCount = {};
 
-    // populate frequeny count via for loop
+    // count number of times a level occurs in tasks.
     for (const level of tasks) {
         levelCount[level] ? levelCount[level]++ : levelCount[level] = 1;
     }
@@ -70,7 +70,7 @@ var minimumRounds = function(tasks) {
 My Initial Solution:
 
 # Method
-Counting (via Hashmap) + Greedy + Math
+Counting Sort (via Hashmap) + Greedy + Math
 */
 var minimumRounds = function(tasks) {
     // define frequency count, tasks length, min count
