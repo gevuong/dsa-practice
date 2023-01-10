@@ -4,6 +4,7 @@ https://leetcode.com/problems/gas-station/description/
 
 # Method
 Greedy (One Pass)
+For more info: https://www.youtube.com/watch?v=wDgKaNrSOEI
 
 # Intuition
 - Reminded me of circular array loop, where we track which gas stations were
@@ -15,8 +16,6 @@ visited for each starting gas index.
 that means all previous gas stations are not valid solutions.
 - Therefore, reset tank to 0, and update starting index to the next index in
 loop.
-
-For more info: https://www.youtube.com/watch?v=wDgKaNrSOEI
 
 # Approach
 <!-- Describe your approach to solving the problem. -->

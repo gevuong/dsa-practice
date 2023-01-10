@@ -3,7 +3,7 @@
 https://leetcode.com/problems/number-of-islands/description/
 
 # Method
-BFS (Queue) + Visited Matrix (Optional)
+BFS (via Queue) + Visited Matrix (Optional)
 
 # Intuition
 <!-- Describe your first thoughts on how to solve this problem. -->
@@ -17,13 +17,12 @@ O(n x m).
 
 - Space complexity:
 O(n x m) due to visited matrix.
-If we are allowed to modify input matrix, we can mark visited cells as '0', 
-thereby removing the need to have a visited matrix.
-Doing so will reduce space to O(min(n, m)), where the max elements in queue is
-min(n, m).
-Here is an image explaining why the space is the minimum between
-row and column of grid: https://imgur.com/gallery/M58OKvB
-
+- If we are allowed to modify input matrix, we can mark visited cells as '0', 
+    thereby removing the need to have a visited matrix.
+- This can reduce space to O(min(n, m)), where the max elements in queue is
+    min(n, m).
+- Image explaining why the space is the minimum between row and column of grid:
+    https://imgur.com/gallery/M58OKvB
 */
 
 var numIslands = function(grid) {
@@ -61,7 +60,10 @@ function bfs(grid, visited, i, j, rowLen, colLen, dirs) {
 
         // if row/col is out of bounds, cell has been visited,
         // or grid cell equals '0', stop traversing.
-        if (row < 0 || col < 0 || row >= rowLen || col >= colLen || visited[row][col] || grid[row][col] === '0') continue;
+        if (
+            row < 0 || col < 0 || row >= rowLen || col >= colLen ||
+            visited[row][col] || grid[row][col] === '0'
+        ) continue;
 
         // otherwise, mark cell as visited,
         visited[row][col] = true;

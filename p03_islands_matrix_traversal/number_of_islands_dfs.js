@@ -50,7 +50,10 @@ var numIslands = function(grid) {
 function dfs(grid, visited, i, j, rowLen, colLen) {
     // stop traversing island if row/col are out of bounds, 
     // cell has been visited, or grid cell equals 0.
-    if (i < 0 || j < 0 || i >= rowLen || j >= colLen || visited[i][j] || grid[i][j] === '0') return;
+    if (
+        i < 0 || j < 0 || i >= rowLen || j >= colLen ||
+        visited[i][j] || grid[i][j] === '0'
+    ) return;
     
     // otherwise, update visited grid
     visited[i][j] = true;

@@ -38,7 +38,7 @@ var maxIceCream = function(costs, coins) {
     let maxIceCream = 0;
     for (let cost = minCost; cost <= maxCost; cost++) {
         // if cost is greater than coins, then no 
-        // coins can buy any ice cream.
+        // coin amount can buy any ice cream.
         if (cost > coins) break;
 
         while (costCount[cost] > 0 && cost <= coins) {
