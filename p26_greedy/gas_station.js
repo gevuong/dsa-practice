@@ -3,7 +3,7 @@
 https://leetcode.com/problems/gas-station/description/
 
 # Method
-Greedy (One Pass)
+Two Pointers (Fast and Slow, Same Direction) + Greedy (One Pass)
 For more info: https://www.youtube.com/watch?v=wDgKaNrSOEI
 
 # Intuition

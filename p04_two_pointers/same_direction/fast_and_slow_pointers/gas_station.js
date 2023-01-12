@@ -3,7 +3,7 @@
 https://leetcode.com/problems/gas-station/description/
 
 # Method
-Two Pointers (Fast and Slow) + Visited Array
+Two Pointers (Fast and Slow, Same Direction) + Visited Array + Greedy
 Not the most space efficient. Can be done in greedy one-pass.
 
 # Intuition
