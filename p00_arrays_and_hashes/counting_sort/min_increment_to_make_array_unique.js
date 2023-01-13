@@ -11,7 +11,7 @@ Learn more: https://leetcode.com/problems/minimum-increment-to-make-array-unique
 There are 2 tricks to this problem.
 1. The counting sort array must be of length (nums length + max num).
     Consider an array of all the same value. The largest number in the final 
-    array will be the original value plus the length of the array minus 1. 
+    array will be the original value plus the length of the array. 
     For example, [10, 10, 10, 10] will become [10, 11, 12, 13].
 2. Per iteration, if there are duplicate numbers, we must add the number of
     duplicates to only the min number of moves, but also to the next value in
@@ -24,7 +24,7 @@ There are 2 tricks to this problem.
 
 # Complexity
 - Time complexity:
-O(3n + m) => O(n + m). Where n is length of nums, and m is max num.
+O(3n + m) => O(n + m). Where n is length of nums, and m is range from min to max num.
 Worst case is if min num is 1, then we iterate n+m times.
 
 - Space complexity:
@@ -42,11 +42,11 @@ var minIncrementForUnique = function(nums) {
     // if we have nums = [3,3,3,3], the largest unique value will
     // be 6 (ie. [3,4,5,6]).
     //
-    // This is calculated by nums length + max num - 1.
-    // (ie. 3 + 4 - 1 = 6).
+    // This is calculated by nums length + max num.
+    // (ie. 3 + 4 = 7).
     //
     // Therefore, given nums = [3,3,3,3], 
-    // numsCount = [0,0,0,4,0,0].
+    // numsCount = [0,0,0,4,0,0,0].
     const numsCount = Array(numsLen + maxNum).fill(0);
     for (let n of nums) numsCount[n]++;
 
@@ -62,7 +62,7 @@ var minIncrementForUnique = function(nums) {
 
         // add 3 dups to the next value in nums count. In other words,
         // numsCount of value 4, which was originally 0, becomes 3.
-        // (ie. numsCount = [0,0,0,4,3,2])
+        // (ie. numsCount = [0,0,0,4,3,2,1])
         numsCount[n+1] += numDups;
 
         // to account for adding 3 to value 4 in numsCount,
