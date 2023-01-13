@@ -37,8 +37,14 @@ var isSameTree = function(p, q) {
         // pop queue twice
         const [nodeOne, nodeTwo] = [queue.pop(), queue.pop()];
 
+        // if both nodes are null, they can still be the same tree, but we
+        // don't need to continue traversing those nodes.
         if (nodeOne === null && nodeTwo === null) continue;
-        if (nodeOne === null || nodeTwo === null) return false; 
+
+        // after checking if both nodes are null, if either node is null,
+        // then we know the trees are not the same.
+        if (nodeOne === null || nodeTwo === null) return false;
+
         // if popped values are not equal, return false
         if (nodeOne.val !== nodeTwo.val) return false;
 
