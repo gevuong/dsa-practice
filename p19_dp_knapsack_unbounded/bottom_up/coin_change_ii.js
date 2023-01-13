@@ -29,9 +29,11 @@ var change = function(amount, coins) {
     // traverse 2d dp array linearly.
     // loop coins indices
     for (let i = 0; i < coinsLen; i++) {
+
         // loop from 1 to amount inclusive. 
         // Each jth value represents an amount.
         for (let j = 1; j <= amount; j++) {
+
             // define recurrence relation.
             // Two options:
             // 1. don't include current coin.
@@ -39,6 +41,7 @@ var change = function(amount, coins) {
             //     for the number of combos since it does not include current coin index.
             // 1b. we ony consider previous row if coins index > 0, otherwise, we cannot access -1 index. 
             if (i > 0) dp[i][j] = dp[i-1][j];
+            
             // 2. include current coin.
             // 2a. if current coin value <= j amount, then we want to add the number of combos
             //     from the subproblem solved at the current row, i, but at column j-coins[i].

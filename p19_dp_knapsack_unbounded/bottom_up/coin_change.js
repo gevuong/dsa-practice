@@ -54,4 +54,31 @@ var coinChange = function(coins, amount) {
 };
 
 
+var coinChange = function(coins, amount) {
+    // define 2d array to store solution at each state,
+    // and min number of coins.
+    const coinsLen = coins.length,
+          dp = Array(coinsLen).fill(Infinity).map(() => Array(amount+1).fill(Infinity));
+    
+    // define base case, at 0 amount, there can be 0 coins.
+    for (let i = 0; i < coinsLen; i++) dp[i][0] = 0; 
+        
+    // loop index of coins
+    for (let i = 0; i < coinsLen; i++) {
+        // loop up to amount
+        for (let amt = 1; amt <= amount; amt++) {
+            // define recurrence relation.
+            // don't include coin
+            if (i > 0) dp[i][amt] = dp[i-1][amt];
+            
+            if (coins[i] <= amt) {
+                dp[i][amt] = Math.min(dp[i][amt], dp[i][amt - coins[i]] + 1);
+            }    
+        }
+    }
+    
+    // return bottom right corner of dp array.
+    return dp[coinsLen-1][amount] === Infinity ? -1 : dp[coinsLen-1][amount];
+};
+
 
