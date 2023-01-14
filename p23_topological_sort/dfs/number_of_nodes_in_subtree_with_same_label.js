@@ -2,8 +2,11 @@
 # Problem
 https://leetcode.com/problems/number-of-nodes-in-the-sub-tree-with-the-same-label/description/
 
+Return an array of size n where ans[i] is the number of nodes in the subtree of
+the ith node which have the same label as node i.
+
 # Method
-Recursive DFS = Adjacency List (via Hashmap)
+Recursive DFS + Adjacency List
 
 # Intuition
 The algorithm is very similar to min time to collect apples, which is another

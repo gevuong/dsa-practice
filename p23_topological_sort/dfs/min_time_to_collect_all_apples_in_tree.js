@@ -2,8 +2,11 @@
 # Problem
 https://leetcode.com/problems/minimum-time-to-collect-all-apples-in-a-tree/description/
 
+Return the minimum time in seconds you have to spend to collect all apples in 
+the tree, starting at vertex 0 and coming back to this vertex.
+
 # Method
-Recursive DFS
+Recursive DFS + Adjacency List
 
 # Intuition
 <!-- Describe your first thoughts on how to solve this problem. -->
