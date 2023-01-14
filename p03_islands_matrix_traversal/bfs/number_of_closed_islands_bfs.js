@@ -136,25 +136,19 @@ function bfs(grid, i, j, rowLen, colLen, dirs) {
         for (const [dx, dy] of dirs) {
             const [row, col] = [r + dx, c + dy];
 
-            // if neighbor coords are out of bounds, 
-            // or cell equals 1, stop traversing in that direction.
-            if (
-                row < 0 || col < 0 || row >= rowLen || col >= colLen ||
-                grid[row][col] === 1
-            ) continue;
-
-            // if cell equals 0 and is on the edge of grid, set isClosed to false
-            // and stop traversing in that direction.
-            if (
-                grid[row][col] === 0 &&
-                (row === 0 || col === 0 || row === rowLen - 1 || col === colLen - 1)
-            ) {
+            // if neighbor coords are out of bounds, that means the current
+            // cell is touching an edge, which means the island is not closed.
+            if (row < 0 || col < 0 || row >= rowLen || col >= colLen) {
                 isClosed = false;
                 continue;
             }
 
-            // push valid neighbor that is part of the close island we're traversing
-            // (ie. neighbor that within bounds, is a land, and is not on the edge).
+            // if cell is WATER, the island may still be valid, but we can
+            // stop traversing in that direction by skipping it.
+            if (grid[row][col] === WATER) continue;
+
+            // push valid neighbor (ie. a land cell that is not on the edge)
+            // that is part of the closed island.
             queue.push([row, col])
         }
     }
