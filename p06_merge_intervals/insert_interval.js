@@ -3,7 +3,7 @@
 https://leetcode.com/problems/insert-interval/description/
 
 # Method
-Linear Search (via 2-3 While Loops)
+Linear Search (via 2 While Loops) + Single Pointer
 
 # Intuition
 <!-- Describe your first thoughts on how to solve this problem. -->
@@ -19,7 +19,7 @@ Linear Search (via 2-3 While Loops)
 
 # Complexity
 - Time:
-O(n). We loop length of intervals.
+O(n). We visit each interval at most once.
 
 - Space:
 O(1). The output array does not count as extra space.
@@ -58,11 +58,8 @@ var insert = function(intervals, newInterval) {
     // add new interval to output
     res.push([newStart, newEnd]);
     
-    // loop and push remaining current intervals
-    while (i < intervalsLen) {
-        res.push(intervals[i]);
-        i++;
-    }
+    // push remaining current intervals
+    res.push(...intervals.slice(i));
 
     return res;
 };
