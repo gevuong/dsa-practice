@@ -2,6 +2,12 @@
 # Problem
 https://leetcode.com/problems/insert-interval/description/
 
+Insert newInterval into intervals such that intervals is still sorted in 
+ascending order by start_i and intervals still does not have any overlapping
+intervals (merge overlapping intervals if necessary).
+
+Return intervals after the insertion.
+
 # Method
 Linear Search (via 2 While Loops) + Single Pointer
 
