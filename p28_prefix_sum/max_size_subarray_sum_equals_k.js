@@ -4,21 +4,21 @@ https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/description/
 # Method: Prefix Sum + Hashmap
 
 # Intuition
-    The idea is that if prefix[end] - prefix[start] equals target, then the subarray that
-    sums to target is [start + 1, end].
+The idea is that if prefix[end] - prefix[start] equals target, then the 
+subarray that sums to target is [start + 1, end].
 
-    In other words, if prefix[5] - prefix[1] === target, subarray ranging from
-    [1+1, 5] will equal target.
+In other words, if prefix[5] - prefix[1] === target, subarray ranging from
+[1+1, 5] will equal target.
 
-    nums.slice(2, 6) => sum of [2,3,4,5] => 14.
+nums.slice(2, 6) => sum of [2,3,4,5] => 14.
 
-    Prefix Sum Example:
-    nums = [0,1,2,3,4,5,6,7], target = 14
-    pSum = [0,1,3,6,10,15,21,28]
+Prefix Sum Example:
+nums = [0,1,2,3,4,5,6,7], target = 14
+pSum = [0,1,3,6,10,15,21,28]
 
-    pSum[5] - pSum[1] = 15 - 1 = 14. 
-    So, subarray sum between [2..5] equals 14.
-    5 - 1 = 4
+pSum[5] - pSum[1] = 15 - 1 = 14. 
+So, subarray sum between [2..5] equals 14.
+5 - 1 = 4
 
 # Approach
     1. Create a hashmap to map prefix sum to its index.
