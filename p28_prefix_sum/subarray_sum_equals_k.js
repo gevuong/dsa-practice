@@ -7,6 +7,8 @@ subarrays whose sum equals to k.
 
 A subarray is a contiguous non-empty sequence of elements within an array.
 
+Helpful explanation: https://youtu.be/fFVZt-6sgyo?t=602
+
 # Method
 Prefix Sum + Hashmap (map prefix sum to count)
 
@@ -15,8 +17,22 @@ Prefix Sum + Hashmap (map prefix sum to count)
     hashmap.
 2. During any iteration, if the difference of a prefix sum and k exists as a
     key in the hashmap, that means that in a previous iteration, we encountered a
-    prefix sum that equals that difference. This in turn means there is x number of
-    subarray sums we encountered, that equals k.
+    prefix sum that equals that difference. 
+    
+    For example:
+    nums = [1,-1,1,1,1,1], k = 3
+    At index 4, we have a prefix sum = 3, and prefix sum count of
+    {
+        0: 2,
+        1: 2,
+    }
+
+    prefix sum - k = 3 - 3 = 0. 
+    So prefixSumCount[0] = 2.
+    
+    At index 4, we have 2 subarray sums that equal k. Indices [0,4] and [2,4].
+    
+    This in turn means there is x number of subarray sums encountered that equals k.
 3. What is that number? It would be the value of the key value pair, where the
     key is the difference between the prefix sum and k.
 
