@@ -41,7 +41,7 @@ Prefix Sum + Prefix Mod + Hashmap (map prefix mod to count)
 O(n).
 
 - Space:
-O(n).
+O(k), where k is the max number of unique remainders in the hashmap.
 */
 
 var subarraysDivByK = function(nums, k) {
