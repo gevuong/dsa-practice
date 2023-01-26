@@ -1,7 +1,8 @@
 /*
 https://leetcode.com/problems/maximum-size-subarray-sum-equals-k/description/
 
-# Method: Prefix Sum + Hashmap
+# Method
+Prefix Sum + Hashmap
 
 # Intuition
 The idea is that if prefix[end] - prefix[start] equals target, then the 

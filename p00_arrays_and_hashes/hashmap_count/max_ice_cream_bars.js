@@ -3,7 +3,7 @@
 https://leetcode.com/problems/maximum-ice-cream-bars/description/
 
 # Method
-Counting Sort (via Hashmap) + Greedy
+Count (via Hashmap) + Greedy
 
 # Intuition
 <!-- Describe your first thoughts on how to solve this problem. -->

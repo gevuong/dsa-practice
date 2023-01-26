@@ -3,7 +3,7 @@
 https://leetcode.com/problems/two-sum-less-than-k/description/
 
 # Method
-Counting Sort + Two Pointers (Opposite Directions)
+Counting Sort (via Array) + Two Pointers (Opposite Directions)
 
 # Intuition
 <!-- Describe your first thoughts on how to solve this problem. -->

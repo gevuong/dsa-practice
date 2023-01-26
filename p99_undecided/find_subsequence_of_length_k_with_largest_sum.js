@@ -1,7 +1,8 @@
 /*
 https://leetcode.com/problems/find-subsequence-of-length-k-with-the-largest-sum/description/
 
-Method: Sort by Numbers, then Sort by Indices (Not as efficient)
+# Method
+Sort by Numbers, then Sort by Indices (Not as efficient)
 
 # Intuition
 Sort by numbers, then sort k largest numbers by its indices, and return those

@@ -3,7 +3,7 @@
 https://leetcode.com/problems/longest-subsequence-with-limited-sum/description/
 
 # Method
-Prefix Sum + Binary Search
+Sort + Prefix Sum + Binary Search
 
 # Intuition
 <!-- Describe your first thoughts on how to solve this problem. -->

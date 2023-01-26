@@ -3,7 +3,7 @@
 https://leetcode.com/problems/max-points-on-a-line/description/
 
 # Method
-Counting Sort (via Hashmap) + Math
+Count (via Hashmap) + Math
 
 # Intuition
 - The way to determine if a point is on the same straight line as the base point

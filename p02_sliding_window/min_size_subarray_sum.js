@@ -1,7 +1,8 @@
 /*
 https://leetcode.com/problems/minimum-size-subarray-sum/description/
 
-# Method: Sliding Window
+# Method
+Sliding Window
 
 # Intuition
 <!-- Describe your first thoughts on how to solve this problem. -->

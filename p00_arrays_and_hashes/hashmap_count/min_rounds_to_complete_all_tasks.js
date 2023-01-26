@@ -3,7 +3,7 @@
 https://leetcode.com/problems/minimum-rounds-to-complete-all-tasks/description/
 
 # Method
-Counting Sort (via Hashmap) + Greedy + Math
+Count (via Hashmap) + Greedy + Math
 
 # Intuition
 - Initially thought this may be a DP problem, similar to Climbing Stairs.

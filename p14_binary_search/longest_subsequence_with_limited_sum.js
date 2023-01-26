@@ -3,7 +3,7 @@
 https://leetcode.com/problems/longest-subsequence-with-limited-sum/description/
 
 # Method
-Prefix Sum + Binary Search
+Sort + Prefix Sum + Binary Search
 
 # Intuition
 <!-- Describe your first thoughts on how to solve this problem. -->
@@ -79,7 +79,7 @@ function bSearch(prefixSum, numsLen, target) {
 
 /*
 # Method
-Sort and Count (Passes LC but Less efficient)
+Sort + Count (Passes LC but Less efficient)
 
 # Intuition
 <!-- Describe your first thoughts on how to solve this problem. -->
@@ -133,7 +133,7 @@ var answerQueries = function(nums, queries) {
                 break;
             }
 
-            // if prefix sum < queries val, incement sub length
+            // if prefix sum < queries val, increment sub length
             if (prefixSum < queries[i]) {
                 j++;
             }
