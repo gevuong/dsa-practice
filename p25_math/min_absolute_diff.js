@@ -2,6 +2,13 @@
 # Problem
 https://leetcode.com/problems/minimum-absolute-difference/description/
 
+Return a list of pairs in ascending order(with respect to pairs), each pair
+[a, b] follows:
+
+a, b are from arr
+a < b
+b - a equals to the minimum absolute difference of any two elements in arr
+
 # Method
 Sort + Math (Very Little)
 
