@@ -1,7 +1,8 @@
 /*
 https://leetcode.com/problems/climbing-stairs/description/
 
-Method: Bottom up 1D DP (Fibonacci Number pattern)
+Method
+DP Fibonacci Numbers (via Bottom Up 1D DP Array)
 
 # Intuition
 <!-- Describe your first thoughts on how to solve this problem. -->
