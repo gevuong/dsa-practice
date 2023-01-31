@@ -2,7 +2,7 @@
 https://leetcode.com/problems/house-robber/description/
 
 Method
-DP Fibonacci Numbers (via Bottom Up 1D DP Array)
+DP - Fibonacci Numbers (Bottom Up via 1D Array)
 
 Approach:
 1. A function or data structure that will compute/contain the answer to the problem 

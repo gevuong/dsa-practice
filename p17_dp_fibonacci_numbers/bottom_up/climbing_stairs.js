@@ -2,7 +2,7 @@
 https://leetcode.com/problems/climbing-stairs/description/
 
 Method
-DP Fibonacci Numbers (via Bottom Up 1D DP Array)
+DP - Fibonacci Numbers (Bottom Up via 1D Array)
 
 # Intuition
 <!-- Describe your first thoughts on how to solve this problem. -->

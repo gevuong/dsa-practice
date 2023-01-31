@@ -7,7 +7,7 @@ T0 = 0, T1 = 1, T2 = 1, and Tn+3 = Tn + Tn+1 + Tn+2 for n >= 0.
 Given n, return the value of Tn.
 
 # Method
-DP Fibonacci Numbers (via Bottom Up 1D DP Array)
+DP - Fibonacci Numbers (Bottom Up via 1D Array)
 
 # Intuition
 <!-- Describe your first thoughts on how to solve this problem. -->

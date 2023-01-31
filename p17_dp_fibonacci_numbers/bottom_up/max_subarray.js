@@ -3,7 +3,7 @@
 https://leetcode.com/problems/maximum-subarray/description/
 
 # Method
-DP Fibonacci Numbers (via Bottom Up 1D DP Array) + Kadane's Algorithm (greedy-like)
+DP - Fibonacci Numbers (Bottom Up via 1D Array) + Kadane's Algorithm (greedy-like)
 
 # Intuition
 - The difficult part is figuring out when a negative number is "worth" keeping in
