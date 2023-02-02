@@ -79,3 +79,55 @@ var gcdOfStrings = function(str1, str2) {
 
     return '';
 };
+
+/*
+# Method
+Math + Euclidean Algorithm (via Recursion)
+
+Explains how Euclidean Algorithm is used to find GCD of 2 numbers:
+https://leetcode.com/problems/greatest-common-divisor-of-strings/solutions/314698/javascript-easy-to-understand-gcd-solution-with-explanation-beats-97/
+
+# Intuition
+<!-- Describe your first thoughts on how to solve this problem. -->
+
+# Approach
+
+
+# Complexity
+- Time:
+O(logn + m + n) => O(m + n).
+Euclidean algorithm takes O(logn) to find the gcd.
+Comparing the two string concatenations take O(m + n) time because string
+comparisons usually do a linear scan of the characters, and returns false at
+the first index when characters do not match.
+So the overall time is O(m + n).
+
+- Space:
+O(m + n).
+Comparing the concatenation of two strings occupies m + n space.
+
+*/
+
+var gcdOfStrings = function(str1, str2) {
+    // handle edge case.
+    // If concatenating both strings in either order are not equal,
+    // that means there is no gcd between both strings.
+    if (str1 + str2 !== str2 + str1) return '';
+
+    // define string lengths
+    const s1Len = str1.length,
+        s2Len = str2.length;
+    
+    // if lengths are equal, return an empty string
+    if (str1 === str2) return str1;
+
+    // Similarly with numbers, we can obtain the gcd of two strings
+    // by recursively calculating the gcd with 2 parameters:
+    // 1. The result of the larger string subtracted by the smaller string,
+    // which in this case, would be the slice of the remaining string
+    // beginning at the index equal to the shorter string length.
+    // and
+    // 2. The shorter string.
+    if (s1Len > s2Len) return gcdOfStrings(str1.slice(s2Len), str2);
+    return gcdOfStrings(str2.slice(s1Len), str1);
+};
