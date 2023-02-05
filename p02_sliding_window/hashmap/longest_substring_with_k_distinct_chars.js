@@ -3,7 +3,7 @@
 https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/description/
 
 # Method
-Sliding Window + Hashmap (Count)
+Sliding Window + Count (via Hashmap)
 
 # Intuition
 <!-- Describe your first thoughts on how to solve this problem. -->
