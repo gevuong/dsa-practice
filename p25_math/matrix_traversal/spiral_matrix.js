@@ -5,7 +5,7 @@ https://leetcode.com/problems/spiral-matrix/description/
 Given an m x n matrix, return all elements of the matrix in spiral order.
 
 # Method
-Set Boundaries (via Offset) + While Loops
+Matrix Traversal + Set Boundaries (via Offset) + While Loops
 
 # Intuition
 <!-- Describe your first thoughts on how to solve this problem. -->
